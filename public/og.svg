@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D7BE74"/>
+      <stop offset="1" stop-color="#9C7436"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="10%" r="80%">
+      <stop offset="0" stop-color="#B89047" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#B89047" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#101113"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(110 140)">
+    <rect x="0" y="0" width="980" height="350" rx="34" fill="#FBF8F0" opacity="0.06" stroke="#FBF8F0" stroke-opacity="0.10"/>
+    <text x="60" y="140" font-family="Playfair Display, Georgia, serif" font-size="84" fill="url(#gold)" letter-spacing="1">HG Cuisine</text>
+    <text x="60" y="210" font-family="Inter, system-ui, sans-serif" font-size="34" fill="#FBF8F0" opacity="0.85">Private dining • Bespoke catering • Refined events</text>
+    <text x="60" y="280" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#CBBFB1" opacity="0.9">Elegant menus. Warm hospitality. Seamless execution.</text>
+  </g>
+</svg>
