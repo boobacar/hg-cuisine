@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   CalendarDays,
@@ -6,75 +6,75 @@ import {
   Plane,
   ShieldCheck,
   Sparkles,
-} from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { PageShell } from '../components/PageShell'
-import { SectionHeading } from '../components/SectionHeading'
-import { site } from '../data/site'
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { PageShell } from "../components/PageShell";
+import { SectionHeading } from "../components/SectionHeading";
+import { site } from "../data/site";
 
 const featureCards = [
   {
     icon: ChefHat,
-    title: 'Private Dining',
-    desc: 'An intimate restaurant-quality experience at home—tailored menu, plating, and pacing.',
+    title: "Private Dining",
+    desc: "An intimate restaurant-quality experience at home—tailored menu, plating, and pacing.",
   },
   {
     icon: Sparkles,
-    title: 'Bespoke Catering',
-    desc: 'Refined bites, family-style spreads, or plated service—always elevated and consistent.',
+    title: "Bespoke Catering",
+    desc: "Refined bites, family-style spreads, or plated service—always elevated and consistent.",
   },
   {
     icon: CalendarDays,
-    title: 'Events & Celebrations',
-    desc: 'From milestone dinners to brand gatherings—smooth logistics and polished presentation.',
+    title: "Events & Celebrations",
+    desc: "From milestone dinners to brand gatherings—smooth logistics and polished presentation.",
   },
-] as const
+] as const;
 
 const testimonials = [
   {
     quote:
-      'Every course felt intentional—beautiful flavors, flawless timing, and a calm presence in the kitchen.',
-    name: 'Private dinner host',
-    tag: 'Host',
-    title: 'Intimate tasting for 12',
+      "Every course felt intentional—beautiful flavors, flawless timing, and a calm presence in the kitchen.",
+    name: "Private dinner host",
+    tag: "Host",
+    title: "Intimate tasting for 12",
   },
   {
     quote:
-      'Our guests kept asking who catered. The food looked luxurious and tasted even better.',
-    name: 'Event coordinator',
-    tag: 'Planner',
-    title: 'Brand cocktail soirée',
+      "Our guests kept asking who catered. The food looked luxurious and tasted even better.",
+    name: "Event coordinator",
+    tag: "Planner",
+    title: "Brand cocktail soirée",
   },
   {
     quote:
-      'The menu was customized for dietary needs without sacrificing any elegance. Seamless from start to finish.',
-    name: 'Birthday celebration',
-    tag: 'Celebration',
-    title: 'Milestone dinner',
+      "The menu was customized for dietary needs without sacrificing any elegance. Seamless from start to finish.",
+    name: "Birthday celebration",
+    tag: "Celebration",
+    title: "Milestone dinner",
   },
-] as const
+] as const;
 
 const reassurance = [
   {
     icon: ShieldCheck,
-    label: 'Private chef',
-    desc: 'Restaurant-level at home',
+    label: "Private chef",
+    desc: "Restaurant-level at home",
   },
   {
     icon: Sparkles,
-    label: 'Event-ready',
-    desc: 'Polished catering execution',
+    label: "Event-ready",
+    desc: "Polished catering execution",
   },
   {
     icon: Plane,
-    label: 'Available for travel',
-    desc: 'New York • Tri-State • Travel',
+    label: "Available for travel",
+    desc: "New York • Tri-State • Travel",
   },
-] as const
+] as const;
 
 export default function Home() {
-  const leadTestimonial = testimonials[0]
-  const otherTestimonials = testimonials.slice(1)
+  const leadTestimonial = testimonials[0];
+  const otherTestimonials = testimonials.slice(1);
 
   return (
     <PageShell>
@@ -85,7 +85,7 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
                 className="badge"
               >
                 {site.contactName} • {site.locationLabel}
@@ -94,7 +94,7 @@ export default function Home() {
               <motion.h1
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.05 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
                 className="mt-5 font-display text-5xl tracking-tight text-ink-950 sm:text-6xl"
               >
                 Luxury dining,
@@ -106,7 +106,7 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: 'easeOut', delay: 0.1 }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
                 className="mt-5 max-w-xl text-base leading-relaxed text-ink-900/75 sm:text-lg"
               >
                 HG Cuisine crafts elevated private dining and bespoke catering
@@ -118,7 +118,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
                 className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
               >
                 <Link to="/booking" className="btn-gold">
@@ -131,9 +131,9 @@ export default function Home() {
 
               <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {[
-                  { k: 'Tailored', v: 'Menus designed for you' },
-                  { k: 'Polished', v: 'Restaurant-level execution' },
-                  { k: 'Effortless', v: 'Clear planning & timelines' },
+                  { k: "Tailored", v: "Menus designed for you" },
+                  { k: "Polished", v: "Restaurant-level execution" },
+                  { k: "Effortless", v: "Clear planning & timelines" },
                 ].map((s) => (
                   <div
                     key={s.k}
@@ -161,7 +161,7 @@ export default function Home() {
 
                   <div className="absolute inset-x-5 top-5 flex flex-col gap-2">
                     <div className="flex flex-wrap gap-2">
-                      {['Private dining', 'Bespoke catering', 'Events'].map(
+                      {["Private dining", "Bespoke catering", "Events"].map(
                         (pill) => (
                           <span
                             key={pill}
@@ -169,7 +169,7 @@ export default function Home() {
                           >
                             {pill}
                           </span>
-                        ),
+                        )
                       )}
                     </div>
 
@@ -222,16 +222,16 @@ export default function Home() {
                   <div className="mt-4 grid gap-3 sm:grid-cols-3">
                     {[
                       {
-                        title: 'Menu design',
-                        text: 'Seasonal and centered on your tastes.',
+                        title: "Menu design",
+                        text: "Seasonal and centered on your tastes.",
                       },
                       {
-                        title: 'Seamless service',
-                        text: 'Confident pacing and polished presentation.',
+                        title: "Seamless service",
+                        text: "Confident pacing and polished presentation.",
                       },
                       {
-                        title: 'Clean finish',
-                        text: 'Your space reset, guests still glowing.',
+                        title: "Clean finish",
+                        text: "Your space reset, guests still glowing.",
                       },
                     ].map((i) => (
                       <div
@@ -286,11 +286,13 @@ export default function Home() {
             <motion.div
               key={f.title}
               whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+              transition={{ type: "spring", stiffness: 280, damping: 22 }}
               className="card experience-card p-6"
             >
               <f.icon className="h-6 w-6 text-gold-600" />
-              <p className="mt-4 font-display text-xl text-ink-950">{f.title}</p>
+              <p className="mt-4 font-display text-xl text-ink-950">
+                {f.title}
+              </p>
               <p className="mt-2 text-sm leading-relaxed text-ink-900/70">
                 {f.desc}
               </p>
@@ -305,32 +307,32 @@ export default function Home() {
       <section className="bg-ivory-50 py-14 sm:py-18">
         <div className="container-pad">
           <SectionHeading
-          eyebrow="Process"
-          title="A calm, premium planning flow."
-          description="From first message to final course, the process is designed to be clear, collaborative, and refined."
-        />
+            eyebrow="Process"
+            title="A calm, premium planning flow."
+            description="From first message to final course, the process is designed to be clear, collaborative, and refined."
+          />
 
           <div className="timeline-grid mt-10 grid gap-6 lg:grid-cols-2">
             {[
               {
-                n: '01',
-                t: 'Inquire',
-                d: 'Share your date, guest count, and vision. We’ll confirm availability and next steps.',
+                n: "01",
+                t: "Inquire",
+                d: "Share your date, guest count, and vision. We’ll confirm availability and next steps.",
               },
               {
-                n: '02',
-                t: 'Curate',
-                d: 'We craft a menu around your preferences, dietary needs, and the tone of the occasion.',
+                n: "02",
+                t: "Curate",
+                d: "We craft a menu around your preferences, dietary needs, and the tone of the occasion.",
               },
               {
-                n: '03',
-                t: 'Execute',
-                d: 'On-site service with restaurant-level pacing and clean, composed presentation.',
+                n: "03",
+                t: "Execute",
+                d: "On-site service with restaurant-level pacing and clean, composed presentation.",
               },
               {
-                n: '04',
-                t: 'Savor',
-                d: 'Enjoy your guests while everything is handled—down to the final reset.',
+                n: "04",
+                t: "Savor",
+                d: "Enjoy your guests while everything is handled—down to the final reset.",
               },
             ].map((s) => (
               <div
@@ -397,7 +399,9 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-relaxed text-ink-900/80">
                   “{t.quote}”
                 </p>
-                <p className="mt-3 text-sm font-medium text-ink-950">{t.name}</p>
+                <p className="mt-3 text-sm font-medium text-ink-950">
+                  {t.name}
+                </p>
               </div>
             ))}
           </div>
@@ -426,5 +430,5 @@ export default function Home() {
         </div>
       </section>
     </PageShell>
-  )
+  );
 }
