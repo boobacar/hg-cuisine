@@ -1,39 +1,40 @@
-import { Link } from 'react-router-dom'
-import { PageShell } from '../components/PageShell'
-import { SectionHeading } from '../components/SectionHeading'
+import { Link } from "react-router-dom";
+import { PageShell } from "../components/PageShell";
+import { SectionHeading } from "../components/SectionHeading";
+import DomeGallery from "../components/DomeGallery.jsx";
 
 const services = [
   {
-    title: 'Private Dining',
-    desc: 'A multi-course experience in your home with refined plating, pacing, and a spotless finish.',
+    title: "Private Dining",
+    desc: "A multi-course experience in your home with refined plating, pacing, and a spotless finish.",
     includes: [
-      'Menu consultation + customization',
-      'On-site preparation and service',
-      'Dietary accommodations',
-      'Kitchen reset included',
+      "Menu consultation + customization",
+      "On-site preparation and service",
+      "Dietary accommodations",
+      "Kitchen reset included",
     ],
   },
   {
-    title: 'Bespoke Catering',
-    desc: 'Elevated catering for gatherings—perfectly portioned, beautifully presented, and easy to host.',
+    title: "Bespoke Catering",
+    desc: "Elevated catering for gatherings—perfectly portioned, beautifully presented, and easy to host.",
     includes: [
-      'Passed bites or curated stations',
-      'Family-style spreads or plated options',
-      'Setup styling (minimal + modern)',
-      'Clear pickup/delivery timelines',
+      "Passed bites or curated stations",
+      "Family-style spreads or plated options",
+      "Setup styling (minimal + modern)",
+      "Clear pickup/delivery timelines",
     ],
   },
   {
-    title: 'Events & Celebrations',
-    desc: 'Milestones, engagements, intimate brand events—executed with calm precision and refined flow.',
+    title: "Events & Celebrations",
+    desc: "Milestones, engagements, intimate brand events—executed with calm precision and refined flow.",
     includes: [
-      'Timeline + guest flow planning',
-      'Coordinated service style',
-      'Vendor-friendly collaboration',
-      'Optional add-ons by request',
+      "Timeline + guest flow planning",
+      "Coordinated service style",
+      "Vendor-friendly collaboration",
+      "Optional add-ons by request",
     ],
   },
-] as const
+] as const;
 
 export default function Services() {
   return (
@@ -86,33 +87,14 @@ export default function Services() {
           title="Visual mood"
           description="Luxury table sets, plated courses, and quiet service moments to match the HG Cuisine experience."
         />
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          <div className="relative overflow-hidden rounded-xl2 border border-ink-900/10 shadow-soft">
-            <img
-              src="/images/table-setting.jpg"
-              alt="Intimate private dining table set with candles and glassware"
-              className="aspect-[4/5] h-full w-full object-cover"
-              loading="lazy"
+        <div className="mt-8">
+          <div style={{ width: "100%", height: "80vh" }}>
+            <DomeGallery
+              minRadius={1000}
+              segments={30}
+              dragDampening={5}
+              grayscale={false}
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/20 via-transparent to-transparent" />
-          </div>
-          <div className="relative overflow-hidden rounded-xl2 border border-ink-900/10 shadow-soft">
-            <img
-              src="/images/plating-detail.jpg"
-              alt="Plating detail with modern fine-dining presentation"
-              className="aspect-[4/5] h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/20 via-transparent to-transparent" />
-          </div>
-          <div className="relative overflow-hidden rounded-xl2 border border-ink-900/10 shadow-soft">
-            <img
-              src="/images/service-moment.jpg"
-              alt="Service moment pouring wine at a dining table"
-              className="aspect-[4/5] h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/20 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -127,19 +109,22 @@ export default function Services() {
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {[
               {
-                t: 'Menu flexibility',
-                d: 'Each menu is curated for your preferences, dietary needs, and the flow of the occasion.',
+                t: "Menu flexibility",
+                d: "Each menu is curated for your preferences, dietary needs, and the flow of the occasion.",
               },
               {
-                t: 'Clear communication',
-                d: 'You’ll receive a simple confirmation with timing, guest count, and service style—no guessing.',
+                t: "Clear communication",
+                d: "You’ll receive a simple confirmation with timing, guest count, and service style—no guessing.",
               },
               {
-                t: 'Luxury finish',
-                d: 'We respect your space. Expect a spotless kitchen reset and a calm, composed service presence.',
+                t: "Luxury finish",
+                d: "We respect your space. Expect a spotless kitchen reset and a calm, composed service presence.",
               },
             ].map((c) => (
-              <div key={c.t} className="rounded-xl2 border border-ink-900/10 p-6">
+              <div
+                key={c.t}
+                className="rounded-xl2 border border-ink-900/10 p-6"
+              >
                 <p className="text-sm font-medium text-ink-950">{c.t}</p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-900/70">
                   {c.d}
@@ -150,5 +135,5 @@ export default function Services() {
         </div>
       </section>
     </PageShell>
-  )
+  );
 }
