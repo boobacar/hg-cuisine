@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import { PageShell } from "../components/PageShell";
 import { SectionHeading } from "../components/SectionHeading";
-import DomeGallery from "../components/DomeGallery.jsx";
+import DomeGallery from "../components/DomeGallery";
+
+const galleryImages = [
+  "/images/pic1.jpg",
+  "/images/pic2.jpg",
+  "/images/pic3.jpg",
+  "/images/pic4.jpg",
+  "/images/pic5.jpg",
+  "/images/pic6.jpg",
+  "/images/pic7.jpg",
+  "/images/pic8.jpg",
+
+  "/images/plating-detail.jpg",
+  "/images/service-moment.jpg",
+  "/images/table-setting.jpg",
+  "/images/hero-plating.jpg",
+  "/images/chef-portrait.jpg",
+];
 
 const services = [
   {
@@ -87,15 +104,8 @@ export default function Services() {
           title="Visual mood"
           description="Luxury table sets, plated courses, and quiet service moments to match the HG Cuisine experience."
         />
-        <div className="mt-8">
-          <div style={{ width: "100%", height: "80vh" }}>
-            <DomeGallery
-              minRadius={1000}
-              segments={30}
-              dragDampening={5}
-              grayscale={false}
-            />
-          </div>
+        <div className="mt-8 -mx-4 sm:-mx-0 h-[600px] relative">
+          <DomeGallery images={galleryImages} />
         </div>
       </section>
 
