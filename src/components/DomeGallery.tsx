@@ -37,13 +37,6 @@ const DEFAULT_IMAGES: ImageItem[] = [
   "https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop",
 ];
 
-const DEFAULTS = {
-  maxVerticalRotationDeg: 15, // Increased slightly for better feel
-  dragSensitivity: 10, // Increased sensitivity (lower number = more sensitive)
-  enlargeTransitionMs: 300,
-  segments: 35,
-};
-
 const clamp = (v: number, min: number, max: number) =>
   Math.min(Math.max(v, min), max);
 const wrapAngleSigned = (deg: number) => {
@@ -133,7 +126,7 @@ export default function DomeGallery({
           : fitBasis === "width"
           ? w
           : h;
-      let radius = clamp(basis * fit, minRadius, maxRadius);
+      const radius = clamp(basis * fit, minRadius, maxRadius);
       root.style.setProperty("--radius", `${Math.round(radius)}px`);
       applyTransform(rotationRef.current.x, rotationRef.current.y);
     });
@@ -168,16 +161,13 @@ export default function DomeGallery({
   useGesture(
     {
       onDragStart: ({ event }) => {
-        // @ts-ignore
         const evt = event as PointerEvent;
         draggingRef.current = true;
         if (inertiaRAF.current) cancelAnimationFrame(inertiaRAF.current);
         startRotRef.current = { ...rotationRef.current };
-        // @ts-ignore
         startPosRef.current = { x: evt.clientX, y: evt.clientY };
       },
       onDrag: ({ event, last, velocity: [vx, vy] }) => {
-        // @ts-ignore
         const evt = event as PointerEvent;
         const dxTotal = evt.clientX - (startPosRef.current?.x || 0);
         const dyTotal = evt.clientY - (startPosRef.current?.y || 0);
@@ -216,7 +206,12 @@ export default function DomeGallery({
       <div
         ref={rootRef}
         className="sphere-root relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
-        style={{ "--segments-x": segments, "--segments-y": segments } as any}
+        style={
+          {
+            "--segments-x": segments,
+            "--segments-y": segments,
+          } as React.CSSProperties
+        }
       >
         <main
           ref={mainRef}
@@ -238,7 +233,7 @@ export default function DomeGallery({
                       "--offset-y": it.y,
                       "--item-size-x": it.sizeX,
                       "--item-size-y": it.sizeY,
-                    } as any
+                    } as React.CSSProperties
                   }
                 >
                   <div
