@@ -1,26 +1,28 @@
-import { Mail, Phone, Send } from 'lucide-react'
-import { useState } from 'react'
-import { PageShell } from '../components/PageShell'
-import { SectionHeading } from '../components/SectionHeading'
-import { site } from '../data/site'
-import { sendForm } from '../lib/sendForm'
+import { Mail, Send } from "lucide-react";
+import { useState } from "react";
+import { PageShell } from "../components/PageShell";
+import { SectionHeading } from "../components/SectionHeading";
+import { site } from "../data/site";
+import { sendForm } from "../lib/sendForm";
 
 type ContactForm = {
-  name: string
-  email: string
-  phone: string
-  message: string
-}
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
 
 export default function Contact() {
   const [form, setForm] = useState<ContactForm>({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [error, setError] = useState<string | null>(null)
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <PageShell>
@@ -49,13 +51,6 @@ export default function Contact() {
                 <Mail className="h-4 w-4 text-gold-700" />
                 {site.email}
               </a>
-              <a
-                href={`tel:${site.phone}`}
-                className="flex items-center gap-3 rounded-xl2 border border-ink-900/10 bg-ivory-100/60 p-4 text-sm text-ink-950 hover:bg-ivory-100"
-              >
-                <Phone className="h-4 w-4 text-gold-700" />
-                {site.formattedPhone}
-              </a>
             </div>
 
             <p className="mt-6 text-sm leading-relaxed text-ink-900/70">
@@ -75,25 +70,27 @@ export default function Contact() {
             <form
               className="mt-6 grid gap-4"
               onSubmit={async (e) => {
-                e.preventDefault()
-                setStatus('sending')
-                setError(null)
+                e.preventDefault();
+                setStatus("sending");
+                setError(null);
                 const result = await sendForm({
-                  _subject: 'HG Cuisine — Contact',
-                  _template: 'table',
-                  _captcha: 'false',
-                  form: 'Contact',
+                  _subject: "HG Cuisine — Contact",
+                  _template: "table",
+                  _captcha: "false",
+                  form: "Contact",
                   name: form.name,
                   email: form.email,
                   phone: form.phone,
                   message: form.message,
-                })
+                });
                 if (result.ok) {
-                  setStatus('success')
-                  setForm({ name: '', email: '', phone: '', message: '' })
+                  setStatus("success");
+                  setForm({ name: "", email: "", phone: "", message: "" });
                 } else {
-                  setStatus('error')
-                  setError(result.error || 'Something went wrong. Please try again.')
+                  setStatus("error");
+                  setError(
+                    result.error || "Something went wrong. Please try again."
+                  );
                 }
               }}
             >
@@ -146,18 +143,19 @@ export default function Contact() {
               <button
                 type="submit"
                 className="btn-gold w-full"
-                disabled={status === 'sending'}
+                disabled={status === "sending"}
               >
-                {status === 'sending' ? 'Sending...' : 'Send'} <Send className="h-4 w-4" />
+                {status === "sending" ? "Sending..." : "Send"}{" "}
+                <Send className="h-4 w-4" />
               </button>
-              {status === 'success' && (
+              {status === "success" && (
                 <p className="text-center text-xs text-emerald-700">
                   Message sent. We will reply shortly.
                 </p>
               )}
-              {status === 'error' && (
+              {status === "error" && (
                 <p className="text-center text-xs text-red-700">
-                  {error || 'Unable to send right now.'}
+                  {error || "Unable to send right now."}
                 </p>
               )}
             </form>
@@ -165,5 +163,5 @@ export default function Contact() {
         </div>
       </section>
     </PageShell>
-  )
+  );
 }

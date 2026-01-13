@@ -99,7 +99,7 @@ export default function Home() {
               >
                 Luxury dining,
                 <span className="text-balance block">
-                  designed to feel effortless.
+                  A thoughtfully curated, premium planning experience.
                 </span>
               </motion.h1>
 

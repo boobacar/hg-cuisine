@@ -57,10 +57,10 @@ export default function Services() {
   return (
     <PageShell>
       <section className="grain bg-hero-glow">
-        <div className="container-pad py-16 sm:py-20">
+        <div className="container-pad py-7 sm:py-9">
           <SectionHeading
             eyebrow="Services"
-            title="Choose the experience. We’ll handle the details."
+            title="Choose the experience. We’ll handle the rest."
             description="HG Cuisine offers private dining and bespoke catering with a luxury feel—clean, modern, and designed to impress without stress."
           />
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -95,6 +95,35 @@ export default function Services() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-ivory-50 py-14 sm:py-18 border-y border-ink-900/5">
+        <div className="container-pad">
+          <SectionHeading
+            eyebrow="Trust"
+            title="Selected clients & partners"
+            description="We have had the honor of serving distinguished organizations and community pillars."
+          />
+          <div className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-8 text-center">
+            {[
+              "Complex Family Style Food Festival",
+              "Fire Department of the City of New York Engine 308/Battalion 51",
+              "KIN Apparel, Inc.",
+              "Alpha Phi Alpha Fraternity, Inc.",
+              "The Black Alumni Council of Columbia University",
+              "Corporate events, Private Dinners, Birthday Celebrations, etc",
+            ].map((client) => (
+              <div
+                key={client}
+                className="flex items-center justify-center rounded-xl border border-ink-900/10 bg-white/60 px-6 py-4 shadow-sm backdrop-blur-sm"
+              >
+                <span className="font-display text-sm text-ink-900 sm:text-base">
+                  {client}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
