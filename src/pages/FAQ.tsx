@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "What areas do you serve?",
-    a: "We serve New York City, DMV, Washington D.C., Maryland, Virginia, Philadelphia, Delaware, and New Jersey. Travel to other locations is available by request.",
+    a: "We serve New York City, Washington D.C., Maryland, Virginia, Philadelphia, Delaware, and New Jersey. Travel to other locations is available by request.",
   },
   {
     q: "Do you offer tastings?",

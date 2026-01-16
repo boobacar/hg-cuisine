@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { navLinks, site } from '../data/site'
-import { Logo } from './Logo'
-import { sendForm } from '../lib/sendForm'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { navLinks, site } from "../data/site";
+import { Logo } from "./Logo";
+import { sendForm } from "../lib/sendForm";
 
 export function Footer() {
-  const [lead, setLead] = useState({ name: '', email: '' })
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [error, setError] = useState<string | null>(null)
+  const [lead, setLead] = useState({ name: "", email: "" });
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <footer className="border-t border-ink-900/10 bg-ivory-50">
@@ -20,13 +22,9 @@ export function Footer() {
             guests.
           </p>
           <p className="mt-4 text-sm text-ink-900/70">
-            <span className="font-medium text-ink-900">Contact:</span>{' '}
+            <span className="font-medium text-ink-900">Contact:</span>{" "}
             <a className="link-inline text-sm" href={`mailto:${site.email}`}>
               {site.email}
-            </a>{' '}
-            •{' '}
-            <a className="link-inline text-sm" href={`tel:${site.phone}`}>
-              {site.formattedPhone}
             </a>
           </p>
         </div>
@@ -57,23 +55,25 @@ export function Footer() {
           <form
             className="mt-4 space-y-3"
             onSubmit={async (e) => {
-              e.preventDefault()
-              setStatus('sending')
-              setError(null)
+              e.preventDefault();
+              setStatus("sending");
+              setError(null);
               const result = await sendForm({
-                _subject: 'HG Cuisine — Lead capture',
-                _template: 'table',
-                _captcha: 'false',
-                form: 'Footer lead',
+                _subject: "HG Cuisine — Lead capture",
+                _template: "table",
+                _captcha: "false",
+                form: "Footer lead",
                 name: lead.name,
                 email: lead.email,
-              })
+              });
               if (result.ok) {
-                setStatus('success')
-                setLead({ name: '', email: '' })
+                setStatus("success");
+                setLead({ name: "", email: "" });
               } else {
-                setStatus('error')
-                setError(result.error || 'Something went wrong. Please try again.')
+                setStatus("error");
+                setError(
+                  result.error || "Something went wrong. Please try again."
+                );
               }
             }}
           >
@@ -94,14 +94,16 @@ export function Footer() {
               />
             </div>
             <button type="submit" className="btn-gold w-full sm:w-auto">
-              {status === 'sending' ? 'Sending...' : 'Send my details'}
+              {status === "sending" ? "Sending..." : "Send my details"}
             </button>
-            {status === 'success' && (
-              <p className="text-xs text-emerald-700">Sent. We'll reach out soon.</p>
+            {status === "success" && (
+              <p className="text-xs text-emerald-700">
+                Sent. We'll reach out soon.
+              </p>
             )}
-            {status === 'error' && (
+            {status === "error" && (
               <p className="text-xs text-red-700">
-                {error || 'Unable to send right now.'}
+                {error || "Unable to send right now."}
               </p>
             )}
           </form>
@@ -117,5 +119,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
