@@ -10,6 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { PageShell } from "../components/PageShell";
 import { SectionHeading } from "../components/SectionHeading";
+import { HomeGallery } from "../components/HomeGallery";
 import { site } from "../data/site";
 
 const featureCards = [
@@ -79,9 +80,17 @@ export default function Home() {
   return (
     <PageShell>
       <section className="grain relative overflow-hidden bg-hero-glow">
-        <div className="container-pad py-16 sm:py-20 lg:py-24">
+        <div className="container-pad py-7 sm:py-7 lg:py-10">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-6 xl:col-span-5">
+              <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className="mb-4 inline-block font-display text-xl text-gold-600"
+              >
+                My signature dish - likely Lobster Bisque or Mac n Cheese
+              </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -169,7 +178,7 @@ export default function Home() {
                           >
                             {pill}
                           </span>
-                        )
+                        ),
                       )}
                     </div>
 
@@ -308,7 +317,7 @@ export default function Home() {
         <div className="container-pad">
           <SectionHeading
             eyebrow="Process"
-            title="A calm, premium planning flow."
+            title="A thoughtfully curated, premium planning experience."
             description="From first message to final course, the process is designed to be clear, collaborative, and refined."
           />
 
@@ -353,6 +362,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HomeGallery />
 
       <section className="container-pad py-14 sm:py-18">
         <SectionHeading

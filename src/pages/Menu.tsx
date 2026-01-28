@@ -5,6 +5,7 @@ import { SectionHeading } from "../components/SectionHeading";
 
 const cateringMenu = {
   title: "Catering Menu",
+  image: "/images/table-setting.jpg",
   desc: "Designed for events, parties, corporate functions, and celebrations, featuring West African inspired cuisine with modern flair. Menus can be customized based on guest count, dietary needs, and service style.",
   note: "Minimum orders start at $500",
   sections: [
@@ -143,7 +144,7 @@ const privateDinnerMenu = {
 
 export default function Menu() {
   const [activeTab, setActiveTab] = useState<"catering" | "brunch" | "private">(
-    "catering"
+    "catering",
   );
 
   const menus = {
@@ -178,8 +179,8 @@ export default function Menu() {
                 {tab === "catering"
                   ? "Catering"
                   : tab === "brunch"
-                  ? "Brunch"
-                  : "Private Dinner"}
+                    ? "Brunch"
+                    : "Private Dinner"}
               </button>
             ))}
           </div>
@@ -197,17 +198,30 @@ export default function Menu() {
             className="card p-8 sm:p-10"
           >
             <div className="border-b border-ink-900/10 pb-8">
-              <h2 className="font-display text-3xl text-ink-950 sm:text-4xl">
-                {activeMenu.title}
-              </h2>
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-900/70">
-                {activeMenu.desc}
-              </p>
-              {"note" in activeMenu && (
-                <p className="mt-4 font-medium text-gold-700">
-                  {activeMenu.note}
-                </p>
-              )}
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                <div>
+                  <h2 className="font-display text-3xl text-ink-950 sm:text-4xl">
+                    {activeMenu.title}
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-900/70">
+                    {activeMenu.desc}
+                  </p>
+                  {"note" in activeMenu && (
+                    <p className="mt-4 font-medium text-gold-700">
+                      {activeMenu.note}
+                    </p>
+                  )}
+                </div>
+                {"image" in activeMenu && (
+                  <div className="shrink-0 lg:w-1/3">
+                    <img
+                      src={activeMenu.image as string}
+                      alt={activeMenu.title}
+                      className="aspect-[4/3] w-full rounded-xl object-cover shadow-sm sm:aspect-[3/2] lg:aspect-[4/3]"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="mt-10 grid gap-10 md:grid-cols-2">
