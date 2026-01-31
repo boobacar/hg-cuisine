@@ -162,13 +162,13 @@ export default function Home() {
                 <div className="relative overflow-hidden rounded-[28px] border border-gold-400 bg-ink-900 shadow-[0_25px_80px_rgba(0,0,0,0.25)]">
                   <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-gradient-to-br from-gold-500/12 via-transparent to-taupe-300/18 blur-3xl" />
                   <img
-                    src="/images/hero-plating.jpg"
+                    src="/galery/74008626-EDIT.webp"
                     alt="Plated fine-dining dish with modern presentation"
                     className="aspect-[5/6] h-full w-full object-cover"
                     loading="lazy"
                   />
 
-                  <div className="absolute inset-x-5 top-5 flex flex-col gap-2">
+                  <div className="absolute inset-x-5 top-5 flex flex-col gap-2 items-center">
                     <div className="flex flex-wrap gap-2">
                       {["Private dining", "Bespoke catering", "Events"].map(
                         (pill) => (
@@ -184,38 +184,6 @@ export default function Home() {
 
                     <div className="flex-shrink-0 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] text-ivory-100 backdrop-blur-md text-center">
                       {site.locationLabel}
-                    </div>
-                  </div>
-
-                  <div className="pointer-events-none absolute inset-0">
-                    <div className="absolute -left-6 bottom-6 hidden flex-col gap-4 sm:flex">
-                      <div className="floating-shot">
-                        <img
-                          src="/images/service-moment.jpg"
-                          alt="Chef preparing a plate"
-                          className="h-full w-full rounded-2xl object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="floating-shot">
-                        <img
-                          src="/images/table-setting.jpg"
-                          alt="Table setting with candles"
-                          className="h-full w-full rounded-2xl object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="absolute -right-4 top-8 hidden sm:block">
-                      <div className="floating-shot rotate-3">
-                        <img
-                          src="/images/plating-detail.jpg"
-                          alt="Fine dining plating detail"
-                          className="h-full w-full rounded-2xl object-cover"
-                          loading="lazy"
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>

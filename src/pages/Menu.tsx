@@ -5,7 +5,7 @@ import { SectionHeading } from "../components/SectionHeading";
 
 const cateringMenu = {
   title: "Catering Menu",
-  image: "/images/table-setting.jpg",
+  image: "/images/IMG_0142.jpeg",
   desc: "Designed for events, parties, corporate functions, and celebrations, featuring West African inspired cuisine with modern flair. Menus can be customized based on guest count, dietary needs, and service style.",
   note: "Minimum orders start at $500",
   sections: [

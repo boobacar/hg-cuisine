@@ -12,7 +12,9 @@ const galleryImages = [
   "/images/pic6.jpg",
   "/images/pic7.jpg",
   "/images/pic8.jpg",
-
+  "/images/IMG_9919.jpeg",
+  "/images/IMG_9921.JPG",
+  "/images/IMG_99222.jpeg",
   "/images/plating-detail.jpg",
   "/images/service-moment.jpg",
   "/images/table-setting.jpg",

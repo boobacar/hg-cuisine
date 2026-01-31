@@ -37,31 +37,8 @@ export default function Contact() {
       </section>
 
       <section className="container-pad grid gap-10 py-14 sm:py-18 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-5">
-          <div className="card p-6">
-            <p className="font-display text-xl text-ink-950">Direct contact</p>
-            <p className="mt-2 text-sm text-ink-900/70">
-              Prefer a quick message? Reach out directly.
-            </p>
-            <div className="mt-6 space-y-3">
-              <a
-                href={`mailto:${site.email}`}
-                className="flex items-center gap-3 rounded-xl2 border border-ink-900/10 bg-ivory-100/60 p-4 text-sm text-ink-950 hover:bg-ivory-100"
-              >
-                <Mail className="h-4 w-4 text-gold-700" />
-                {site.email}
-              </a>
-            </div>
-
-            <p className="mt-6 text-sm leading-relaxed text-ink-900/70">
-              If you’d like your inquiries routed into a CRM or email platform,
-              we can connect this form to your preferred tool.
-            </p>
-          </div>
-        </div>
-
         <div className="lg:col-span-7">
-          <div className="card p-6">
+          <div className="card p-6 h-full content-center">
             <p className="font-display text-xl text-ink-950">Send a message</p>
             <p className="mt-2 text-sm text-ink-900/70">
               This message goes straight to {site.email}. No email app required.
@@ -89,7 +66,7 @@ export default function Contact() {
                 } else {
                   setStatus("error");
                   setError(
-                    result.error || "Something went wrong. Please try again."
+                    result.error || "Something went wrong. Please try again.",
                   );
                 }
               }}
@@ -159,6 +136,36 @@ export default function Contact() {
                 </p>
               )}
             </form>
+          </div>
+        </div>
+
+        <div className="lg:col-span-5">
+          <div className="card p-6">
+            <p className="font-display text-xl text-ink-950">Direct contact</p>
+            <p className="mt-2 text-sm text-ink-900/70">
+              Prefer a quick message? Reach out directly.
+            </p>
+            <div className="mt-6 space-y-3">
+              <a
+                href={`mailto:${site.email}`}
+                className="flex items-center gap-3 rounded-xl2 border border-ink-900/10 bg-ivory-100/60 p-4 text-sm text-ink-950 hover:bg-ivory-100"
+              >
+                <Mail className="h-4 w-4 text-gold-700" />
+                {site.email}
+              </a>
+            </div>
+
+            <p className="mt-6 text-sm leading-relaxed text-ink-900/70">
+              If you’d like your inquiries routed into a CRM or email platform,
+              we can connect this form to your preferred tool.
+            </p>
+          </div>
+          <div className="card mt-3">
+            <img
+              className="rounded-xl"
+              src="/galery/74008900.webp"
+              alt="chef henry"
+            />
           </div>
         </div>
       </section>
