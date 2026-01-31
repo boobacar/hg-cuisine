@@ -7,7 +7,7 @@ const cateringMenu = {
   title: "Catering Menu",
   image: "/images/IMG_0142.jpeg",
   desc: "Designed for events, parties, corporate functions, and celebrations, featuring West African inspired cuisine with modern flair. Menus can be customized based on guest count, dietary needs, and service style.",
-  note: "Minimum orders start at $500",
+  note: "Minimum orders start at $750",
   sections: [
     {
       title: "Appetizers",
