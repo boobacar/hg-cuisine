@@ -10,7 +10,7 @@ const cateringMenu = {
   note: "Minimum orders start at $500",
   sections: [
     {
-      title: "Hors d'oeuvres",
+      title: "Appetizers",
       items: [
         "Vegetable Spring Rolls",
         "Shrimp Tempura",
