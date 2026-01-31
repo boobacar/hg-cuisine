@@ -87,14 +87,6 @@ export default function Home() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className="mb-4 inline-block font-display text-xl text-gold-600"
-              >
-                My signature dish - likely Lobster Bisque or Mac n Cheese
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
                 className="badge"
               >
                 {site.contactName} • {site.locationLabel}
