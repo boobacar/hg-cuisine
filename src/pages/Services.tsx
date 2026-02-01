@@ -4,22 +4,25 @@ import { SectionHeading } from "../components/SectionHeading";
 import DomeGallery from "../components/DomeGallery";
 
 const galleryImages = [
-  "/images/pic1.jpg",
-  "/images/pic2.jpg",
-  "/images/pic3.jpg",
-  "/images/pic4.jpg",
-  "/images/pic5.jpg",
-  "/images/pic6.jpg",
-  "/images/pic7.jpg",
-  "/images/pic8.jpg",
+  "/images/pic1.jpeg",
+  "/images/pic2.jpeg",
+  "/images/pic3.jpeg",
+  "/images/pic4.jpeg",
+  "/images/pic5.jpeg",
+  "/images/pic6.jpeg",
+  "/images/pic7.jpeg",
+  "/images/pic8.jpeg",
+  "/images/pic8.jpeg",
+
   "/images/IMG_9919.jpeg",
-  "/images/IMG_9921.JPG",
-  "/images/IMG_99222.jpeg",
-  "/images/plating-detail.jpg",
-  "/images/service-moment.jpg",
-  "/images/table-setting.jpg",
-  "/images/hero-plating.jpg",
-  "/images/chef-portrait.jpg",
+  "/images/IMG_0142.jpeg",
+  "/images/IMG_9921.jpeg",
+  "/images/IMG_9922.jpeg",
+  "/images/plating-detail.jpeg",
+  "/images/service-moment.jpeg",
+  "/images/table-setting.jpeg",
+  "/images/hero-plating.jpeg",
+  "/images/chef-portrait.jpeg",
 ];
 
 const services = [
