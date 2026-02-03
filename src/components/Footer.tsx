@@ -4,12 +4,21 @@ import { navLinks, site } from "../data/site";
 import { Logo } from "./Logo";
 import { sendForm } from "../lib/sendForm";
 
+import {
+  IconCode,
+  IconPhone,
+  IconMail,
+  IconGlobe,
+  IconX,
+} from "@tabler/icons-react";
+
 export function Footer() {
   const [lead, setLead] = useState({ name: "", email: "" });
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
   const [error, setError] = useState<string | null>(null);
+  const [isSignatureModalOpen, setSignatureModalOpen] = useState(false);
 
   return (
     <footer className="border-t border-ink-900/10 bg-ivory-50">
@@ -72,7 +81,7 @@ export function Footer() {
               } else {
                 setStatus("error");
                 setError(
-                  result.error || "Something went wrong. Please try again."
+                  result.error || "Something went wrong. Please try again.",
                 );
               }
             }}
@@ -118,6 +127,66 @@ export function Footer() {
           <p>{site.locationLabel}</p>
         </div>
       </div>
+
+      <div className="my-4 flex items-center justify-center text-sm text-black/40">
+        Designed by
+        <button
+          onClick={() => setSignatureModalOpen(true)}
+          className="ml-1 animate-bounce font-bold text-brand-orange hover:underline"
+        >
+          Fallcon Tech
+        </button>
+      </div>
+
+      {/* Signature Modal */}
+      {isSignatureModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm">
+          <div className="relative w-full max-w-sm rounded-2xl border border-white/10 bg-white/30 p-8 text-center shadow-2xl shadow-brand-orange/10">
+            <button
+              onClick={() => setSignatureModalOpen(false)}
+              className="absolute right-4 top-4 text-white/40 transition hover:text-white"
+            >
+              <IconX className="h-5 w-5" />
+            </button>
+
+            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-black/10 text-white">
+              <IconCode className="h-10 w-10" />
+            </div>
+
+            <div className="space-y-4 text-sm text-white/80">
+              <div className="flex items-center justify-center gap-2">
+                <IconPhone className="h-4 w-4 text-brand-orange" />
+                <a
+                  href="tel:+221776260020"
+                  className="transition hover:text-brand-orange hover:underline"
+                >
+                  +221 77 626 00 20
+                </a>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <IconMail className="h-4 w-4 text-brand-orange" />
+                <a
+                  href="mailto:info@fallcontech.com"
+                  className="transition hover:text-brand-orange hover:underline"
+                >
+                  info@fallcontech.com
+                </a>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <IconGlobe className="h-4 w-4 text-brand-orange" />
+                <a
+                  href="https://www.fallcontech.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-brand-orange hover:underline"
+                >
+                  www.fallcontech.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
